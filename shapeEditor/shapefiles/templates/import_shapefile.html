@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>ShapeEditor</title>
+</head>
+<style>
+    body{
+        background-color: white;
+    }
+    h1{
+        color:purple;
+    }
+    #content 
+        {
+        max-width: 500px;
+        margin: auto;
+        }
+    input[type=submit] 
+        {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    button{
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+
+    };
+   
+</style>
+<body>
+    <div id="content">
+        <h1 >Import Shapefile</h1>
+        {% if errMsg %}
+        <b><i>{{ errMsg }}</i></b>
+        {% endif %}
+        <form enctype="multipart/form-data" method="post" action="import">
+            <h2>{{ form.as_p }}</h2>
+            {% comment %} form as paragraph {% endcomment %}
+            <input type="submit" value="Submit"/>
+            <button type="button"onClick='window.location="/shape-editor";'>Cancel</button>
+        </form>
+    </div>    
+</body>
+</html>
+

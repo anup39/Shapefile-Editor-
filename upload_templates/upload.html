@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title>Uploading shapefile in zip file</title>
+
+
+</head>
+
+<body>
+	<h2>Upload your file here </h2>
+	
+	<form method="post" enctype=multipart/form-data>
+		{% csrf_token %}
+		<p>{{form }}</p>
+		{% comment %} <input type="file" name="document"> {% endcomment %}
+		<button type="submit">Submit</button>
+
+	</form>
+	<a href="{% url "list" %}">View your lists here</a>
+
+</body>
+
+
+
+
+
+</html>

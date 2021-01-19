@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>ShapeEditor</title>
+</head>
+    <style>
+        body{
+            background-color:gray;
+        }
+        .content {
+            max-width: 500px;
+             margin: auto;
+        }
+        table,td 
+        {
+        border: 3px solid purple;
+        border-collapse: collapse;
+        background-color: white;
+
+        };
+    </style>
+<body>
+    <div class="content">
+        <h1>ShapeEditor</h1>
+        {% if datas %}
+        <b>Available Shapefiles:</b>
+        <table >
+        {% for file in datas %}
+            <tr>
+                <td><font style="font-family:monospace">{{ file}}</font></td>
+               
+            </tr>
+            {% endfor %}
+ 
+        </table>
+        {% endif %}
+        <a href="{% url "upload"%}">Add new file</a>
+    </div>
+</body>
+</html>
